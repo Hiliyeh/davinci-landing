@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Documentation
+docs/
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temp files
+*.tmp
+*.temp
+*~

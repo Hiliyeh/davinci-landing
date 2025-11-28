@@ -1,0 +1,206 @@
+/* ================================================
+   CSS VARIABLES & RESET
+================================================ */
+:root {
+    --red-primary: #B22222;
+    --red-dark: #8B1A1A;
+    --red-glow: rgba(178, 34, 34, 0.4);
+    --black-deep: #0a0a0a;
+    --black-soft: #141414;
+    --gray-900: #1a1a1a;
+    --gray-800: #252525;
+    --gray-700: #333333;
+    --gray-400: #888888;
+    --gray-300: #aaaaaa;
+    --white: #ffffff;
+    --white-off: #f5f5f5;
+    --blue-junior: #4A90D9;
+    --purple-baby: #9B59B6;
+    --green-fitness: #22B222;
+    --orange-free: #F39C12;
+    --text-primary: var(--white);
+    --text-secondary: var(--gray-400);
+    --text-contrast: var(--white);
+
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'Barlow', sans-serif;
+
+    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--black-deep);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+/* ================================================
+   UTILITIES
+================================================ */
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.section-label {
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    letter-spacing: 0.3em;
+    color: var(--red-primary);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.section-label::before {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background: var(--red-primary);
+}
+
+.section-title {
+    font-family: var(--font-display);
+    font-size: clamp(3.5rem, 8vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    margin-bottom: 1.5rem;
+}
+
+.section-title span {
+    color: var(--red-primary);
+}
+
+.text-white {
+    color: var(--white);
+}
+
+.text-red {
+    color: var(--red-primary);
+}
+/* ================================================
+   BUTTONS
+================================================ */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary {
+    background: var(--red-primary);
+    color: var(--text-contrast);
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%);
+    transform: translateX(-100%);
+    transition: transform var(--transition-smooth);
+}
+
+.btn-primary:hover {
+    background: var(--red-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px var(--red-glow);
+}
+
+.btn-primary:hover::before {
+    transform: translateX(100%);
+}
+
+.btn-outline {
+    border: 2px solid var(--text-primary);
+    color: var(--text-primary);
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background: var(--red-primary);
+    color: var(--text-contrast);
+}
+
+.btn-ghost {
+    color: var(--gray-300);
+    padding: 0.5rem 0;
+}
+
+.btn-ghost:hover {
+    color: var(--red-primary);
+}
+
+.btn-icon {
+    width: 20px;
+    height: 20px;
+    transition: transform var(--transition-fast);
+}
+
+.btn:hover .btn-icon {
+    transform: translateX(4px);
+}
+/* ================================================
+   SCROLL ANIMATIONS
+================================================ */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }

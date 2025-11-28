@@ -1,0 +1,11 @@
+# Robots.txt for Davinci Fighting
+# https://www.davinci-fighting.be
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.davinci-fighting.be/sitemap.xml
+
+# Disallow legal pages from indexing (already noindex in meta)
+Disallow: /legal/

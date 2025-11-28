@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Homepage -->
+    <url>
+        <loc>https://www.davinci-fighting.be/</loc>
+        <lastmod>2025-11-28</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Disciplines Adulte -->
+    <url>
+        <loc>https://www.davinci-fighting.be/disciplines/mma-adulte.html</loc>
+        <lastmod>2025-11-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.davinci-fighting.be/disciplines/bjj-adulte.html</loc>
+        <lastmod>2025-11-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.davinci-fighting.be/disciplines/boxe-anglaise-adulte.html</loc>
+        <lastmod>2025-11-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.davinci-fighting.be/disciplines/kick-boxing-adulte.html</loc>
+        <lastmod>2025-11-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Disciplines Junior -->
+    <url>
+        <loc>https://www.davinci-fighting.be/disciplines/mma-junior.html</loc>
+        <lastmod>2025-11-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.davinci-fighting.be/disciplines/bjj-junior.html</loc>
+        <lastmod>2025-11-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.davinci-fighting.be/disciplines/kick-boxing-junior.html</loc>
+        <lastmod>2025-11-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Disciplines Baby -->
+    <url>
+        <loc>https://www.davinci-fighting.be/disciplines/baby-boxe.html</loc>
+        <lastmod>2025-11-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.davinci-fighting.be/disciplines/kick-boxing-baby.html</loc>
+        <lastmod>2025-11-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Autres -->
+    <url>
+        <loc>https://www.davinci-fighting.be/disciplines/open-mat-grappling.html</loc>
+        <lastmod>2025-11-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://www.davinci-fighting.be/disciplines/musculation.html</loc>
+        <lastmod>2025-11-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+</urlset>
