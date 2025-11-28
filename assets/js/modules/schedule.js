@@ -60,14 +60,14 @@ export function initScheduleHighlight() {
         const currentMinutes = now.getHours() * 60 + now.getMinutes();
 
         // Clear previous highlights
-        document.querySelectorAll('.schedule-item.is-current, .schedule-item.is-next, .schedule-item.is-ending, .schedule-item.is-past').forEach(el => {
-            el.classList.remove('is-current', 'is-next', 'is-ending', 'is-past');
+        document.querySelectorAll('.schedule-item.is-current, .schedule-item.is-past').forEach(el => {
+            el.classList.remove('is-current', 'is-past');
             const badge = el.querySelector('.schedule-badge');
             if (badge) badge.remove();
         });
 
-        document.querySelectorAll('.schedule-mobile-item.is-current, .schedule-mobile-item.is-next, .schedule-mobile-item.is-ending, .schedule-mobile-item.is-past').forEach(el => {
-            el.classList.remove('is-current', 'is-next', 'is-ending', 'is-past');
+        document.querySelectorAll('.schedule-mobile-item.is-current, .schedule-mobile-item.is-past').forEach(el => {
+            el.classList.remove('is-current', 'is-past');
             const badge = el.querySelector('.schedule-badge');
             if (badge) badge.remove();
         });
@@ -95,13 +95,10 @@ export function initScheduleHighlight() {
         });
 
         let currentClass = null;
-        let nextClass = null;
-        let nextClassTime = Infinity;
 
         // Process desktop table
         if (todayRow) {
             const items = todayRow.querySelectorAll('.schedule-item');
-            let currentClassEndTime = null;
 
             items.forEach(item => {
                 // Skip Fitness - it's not a real structured class
@@ -116,46 +113,20 @@ export function initScheduleHighlight() {
                 // Check if class has already ended (past)
                 if (currentMinutes >= timeRange.end) {
                     item.classList.add('is-past');
+                    addBadge(item, 'Terminé', 'past');
                 }
                 // Check if class is currently happening
                 else if (currentMinutes >= timeRange.start && currentMinutes < timeRange.end) {
                     currentClass = item;
-                    currentClassEndTime = timeRange.end;
-                }
-                // Check if this is the next upcoming class
-                else if (timeRange.start > currentMinutes && timeRange.start < nextClassTime) {
-                    nextClassTime = timeRange.start;
-                    nextClass = item;
+                    item.classList.add('is-current');
+                    addBadge(item, 'En cours', 'current');
                 }
             });
-
-            // Apply highlights to desktop
-            if (currentClass) {
-                // Check if class is almost finished (less than 10 minutes remaining)
-                const remainingMinutes = currentClassEndTime - currentMinutes;
-                if (remainingMinutes <= 10) {
-                    currentClass.classList.add('is-ending');
-                    addBadge(currentClass, 'Bientôt fini', 'ending');
-                } else {
-                    currentClass.classList.add('is-current');
-                    addBadge(currentClass, 'En cours', 'current');
-                }
-            }
-            // Show "Prochain" if no class happening OR if current class is ending soon
-            const showNext = !currentClass || (currentClass && currentClassEndTime - currentMinutes <= 10);
-            if (nextClass && showNext) {
-                nextClass.classList.add('is-next');
-                addBadge(nextClass, 'Prochain', 'next');
-            }
         }
 
         // Process mobile accordion
         if (todayCard) {
             const mobileItems = todayCard.querySelectorAll('.schedule-mobile-item');
-            let mobileCurrentClass = null;
-            let mobileNextClass = null;
-            let mobileNextTime = Infinity;
-            let mobileCurrentEndTime = null;
 
             mobileItems.forEach(item => {
                 // Skip Fitness - it's not a real structured class
@@ -170,41 +141,28 @@ export function initScheduleHighlight() {
                 // Check if class has already ended (past)
                 if (currentMinutes >= timeRange.end) {
                     item.classList.add('is-past');
+                    addBadge(item, 'Terminé', 'past');
                 }
+                // Check if class is currently happening
                 else if (currentMinutes >= timeRange.start && currentMinutes < timeRange.end) {
-                    mobileCurrentClass = item;
-                    mobileCurrentEndTime = timeRange.end;
-                }
-                else if (timeRange.start > currentMinutes && timeRange.start < mobileNextTime) {
-                    mobileNextTime = timeRange.start;
-                    mobileNextClass = item;
+                    item.classList.add('is-current');
+                    addBadge(item, 'En cours', 'current');
                 }
             });
-
-            if (mobileCurrentClass) {
-                // Check if class is almost finished (less than 10 minutes remaining)
-                const remainingMinutes = mobileCurrentEndTime - currentMinutes;
-                if (remainingMinutes <= 10) {
-                    mobileCurrentClass.classList.add('is-ending');
-                    addBadge(mobileCurrentClass, 'Bientôt fini', 'ending');
-                } else {
-                    mobileCurrentClass.classList.add('is-current');
-                    addBadge(mobileCurrentClass, 'En cours', 'current');
-                }
-            }
-            // Show "Prochain" if no class happening OR if current class is ending soon
-            const showMobileNext = !mobileCurrentClass || (mobileCurrentClass && mobileCurrentEndTime - currentMinutes <= 10);
-            if (mobileNextClass && showMobileNext) {
-                mobileNextClass.classList.add('is-next');
-                addBadge(mobileNextClass, 'Prochain', 'next');
-            }
         }
     }
 
     function addBadge(element, text, type) {
         const badge = document.createElement('span');
         badge.className = `schedule-badge schedule-badge--${type}`;
-        badge.textContent = text;
+
+        if (type === 'current') {
+            // Add spinning loader icon for "En cours"
+            badge.innerHTML = `<svg class="schedule-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>${text}`;
+        } else {
+            badge.textContent = text;
+        }
+
         element.appendChild(badge);
     }
 
