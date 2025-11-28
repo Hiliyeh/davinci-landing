@@ -60,14 +60,14 @@ export function initScheduleHighlight() {
         const currentMinutes = now.getHours() * 60 + now.getMinutes();
 
         // Clear previous highlights
-        document.querySelectorAll('.schedule-item.is-current, .schedule-item.is-next').forEach(el => {
-            el.classList.remove('is-current', 'is-next');
+        document.querySelectorAll('.schedule-item.is-current, .schedule-item.is-next, .schedule-item.is-ending').forEach(el => {
+            el.classList.remove('is-current', 'is-next', 'is-ending');
             const badge = el.querySelector('.schedule-badge');
             if (badge) badge.remove();
         });
 
-        document.querySelectorAll('.schedule-mobile-item.is-current, .schedule-mobile-item.is-next').forEach(el => {
-            el.classList.remove('is-current', 'is-next');
+        document.querySelectorAll('.schedule-mobile-item.is-current, .schedule-mobile-item.is-next, .schedule-mobile-item.is-ending').forEach(el => {
+            el.classList.remove('is-current', 'is-next', 'is-ending');
             const badge = el.querySelector('.schedule-badge');
             if (badge) badge.remove();
         });
@@ -101,8 +101,12 @@ export function initScheduleHighlight() {
         // Process desktop table
         if (todayRow) {
             const items = todayRow.querySelectorAll('.schedule-item');
+            let currentClassEndTime = null;
 
             items.forEach(item => {
+                // Skip Fitness - it's not a real structured class
+                if (item.classList.contains('fitness')) return;
+
                 const timeEl = item.querySelector('.schedule-item-time');
                 if (!timeEl) return;
 
@@ -112,6 +116,7 @@ export function initScheduleHighlight() {
                 // Check if class is currently happening
                 if (currentMinutes >= timeRange.start && currentMinutes < timeRange.end) {
                     currentClass = item;
+                    currentClassEndTime = timeRange.end;
                 }
                 // Check if this is the next upcoming class
                 else if (timeRange.start > currentMinutes && timeRange.start < nextClassTime) {
@@ -122,11 +127,19 @@ export function initScheduleHighlight() {
 
             // Apply highlights to desktop
             if (currentClass) {
-                currentClass.classList.add('is-current');
-                addBadge(currentClass, 'En cours', 'current');
+                // Check if class is almost finished (less than 10 minutes remaining)
+                const remainingMinutes = currentClassEndTime - currentMinutes;
+                if (remainingMinutes <= 10) {
+                    currentClass.classList.add('is-ending');
+                    addBadge(currentClass, 'Bientôt fini', 'ending');
+                } else {
+                    currentClass.classList.add('is-current');
+                    addBadge(currentClass, 'En cours', 'current');
+                }
             }
-            if (nextClass && !currentClass) {
-                // Only show "prochain" if no class is currently happening
+            // Show "Prochain" if no class happening OR if current class is ending soon
+            const showNext = !currentClass || (currentClass && currentClassEndTime - currentMinutes <= 10);
+            if (nextClass && showNext) {
                 nextClass.classList.add('is-next');
                 addBadge(nextClass, 'Prochain', 'next');
             }
@@ -138,8 +151,12 @@ export function initScheduleHighlight() {
             let mobileCurrentClass = null;
             let mobileNextClass = null;
             let mobileNextTime = Infinity;
+            let mobileCurrentEndTime = null;
 
             mobileItems.forEach(item => {
+                // Skip Fitness - it's not a real structured class
+                if (item.classList.contains('fitness')) return;
+
                 const timeEl = item.querySelector('.schedule-mobile-time');
                 if (!timeEl) return;
 
@@ -148,6 +165,7 @@ export function initScheduleHighlight() {
 
                 if (currentMinutes >= timeRange.start && currentMinutes < timeRange.end) {
                     mobileCurrentClass = item;
+                    mobileCurrentEndTime = timeRange.end;
                 }
                 else if (timeRange.start > currentMinutes && timeRange.start < mobileNextTime) {
                     mobileNextTime = timeRange.start;
@@ -156,10 +174,19 @@ export function initScheduleHighlight() {
             });
 
             if (mobileCurrentClass) {
-                mobileCurrentClass.classList.add('is-current');
-                addBadge(mobileCurrentClass, 'En cours', 'current');
+                // Check if class is almost finished (less than 10 minutes remaining)
+                const remainingMinutes = mobileCurrentEndTime - currentMinutes;
+                if (remainingMinutes <= 10) {
+                    mobileCurrentClass.classList.add('is-ending');
+                    addBadge(mobileCurrentClass, 'Bientôt fini', 'ending');
+                } else {
+                    mobileCurrentClass.classList.add('is-current');
+                    addBadge(mobileCurrentClass, 'En cours', 'current');
+                }
             }
-            if (mobileNextClass && !mobileCurrentClass) {
+            // Show "Prochain" if no class happening OR if current class is ending soon
+            const showMobileNext = !mobileCurrentClass || (mobileCurrentClass && mobileCurrentEndTime - currentMinutes <= 10);
+            if (mobileNextClass && showMobileNext) {
                 mobileNextClass.classList.add('is-next');
                 addBadge(mobileNextClass, 'Prochain', 'next');
             }
