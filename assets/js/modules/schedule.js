@@ -60,14 +60,14 @@ export function initScheduleHighlight() {
         const currentMinutes = now.getHours() * 60 + now.getMinutes();
 
         // Clear previous highlights
-        document.querySelectorAll('.schedule-item.is-current, .schedule-item.is-next, .schedule-item.is-ending').forEach(el => {
-            el.classList.remove('is-current', 'is-next', 'is-ending');
+        document.querySelectorAll('.schedule-item.is-current, .schedule-item.is-next, .schedule-item.is-ending, .schedule-item.is-past').forEach(el => {
+            el.classList.remove('is-current', 'is-next', 'is-ending', 'is-past');
             const badge = el.querySelector('.schedule-badge');
             if (badge) badge.remove();
         });
 
-        document.querySelectorAll('.schedule-mobile-item.is-current, .schedule-mobile-item.is-next, .schedule-mobile-item.is-ending').forEach(el => {
-            el.classList.remove('is-current', 'is-next', 'is-ending');
+        document.querySelectorAll('.schedule-mobile-item.is-current, .schedule-mobile-item.is-next, .schedule-mobile-item.is-ending, .schedule-mobile-item.is-past').forEach(el => {
+            el.classList.remove('is-current', 'is-next', 'is-ending', 'is-past');
             const badge = el.querySelector('.schedule-badge');
             if (badge) badge.remove();
         });
@@ -113,8 +113,12 @@ export function initScheduleHighlight() {
                 const timeRange = parseTimeRange(timeEl.textContent);
                 if (!timeRange) return;
 
+                // Check if class has already ended (past)
+                if (currentMinutes >= timeRange.end) {
+                    item.classList.add('is-past');
+                }
                 // Check if class is currently happening
-                if (currentMinutes >= timeRange.start && currentMinutes < timeRange.end) {
+                else if (currentMinutes >= timeRange.start && currentMinutes < timeRange.end) {
                     currentClass = item;
                     currentClassEndTime = timeRange.end;
                 }
@@ -163,7 +167,11 @@ export function initScheduleHighlight() {
                 const timeRange = parseTimeRange(timeEl.textContent);
                 if (!timeRange) return;
 
-                if (currentMinutes >= timeRange.start && currentMinutes < timeRange.end) {
+                // Check if class has already ended (past)
+                if (currentMinutes >= timeRange.end) {
+                    item.classList.add('is-past');
+                }
+                else if (currentMinutes >= timeRange.start && currentMinutes < timeRange.end) {
                     mobileCurrentClass = item;
                     mobileCurrentEndTime = timeRange.end;
                 }
