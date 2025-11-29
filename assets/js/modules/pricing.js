@@ -53,12 +53,6 @@ export function initPricingTabs() {
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            Vestiaires & douches
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
                             ${index === 0 ? 'Sans engagement long' : 'Suivi personnalisé'}
                         </li>
                         ${index >= 2 ? `<li>

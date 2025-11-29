@@ -34,6 +34,34 @@ export function initScheduleAccordion() {
 export function initScheduleHighlight() {
     const dayNames = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
 
+    function getItemType(element) {
+        if (element.classList.contains('junior')) return 'Junior';
+        if (element.classList.contains('baby')) return 'Baby';
+        if (element.classList.contains('free')) return 'Gratuit';
+        const name = element.querySelector('.schedule-item-name');
+        if (name && name.textContent.includes('Pro')) return 'Pro';
+        return 'Adulte';
+    }
+
+    // Add type badges to ALL desktop items on load
+    function addTypeBadgesToDesktop() {
+        document.querySelectorAll('.schedule-item').forEach(item => {
+            if (item.classList.contains('fitness')) return;
+            if (item.querySelector('.schedule-item-type')) return; // Already has type
+
+            const nameEl = item.querySelector('.schedule-item-name');
+            if (nameEl) {
+                const typeEl = document.createElement('span');
+                typeEl.className = 'schedule-item-type';
+                typeEl.textContent = getItemType(item);
+                nameEl.after(typeEl);
+            }
+        });
+    }
+
+    // Run on load
+    addTypeBadgesToDesktop();
+
     function parseTime(timeStr) {
         // Parse "18h00" or "18h30" format
         const match = timeStr.match(/(\d{1,2})h(\d{2})/);
@@ -163,7 +191,22 @@ export function initScheduleHighlight() {
             badge.textContent = text;
         }
 
-        element.appendChild(badge);
+        // For mobile items, create a wrapper with category tag + status badge
+        const existingTag = element.querySelector('.schedule-mobile-tag');
+        if (existingTag) {
+            // Mobile: wrapper with existing tag + status badge
+            const wrapper = document.createElement('div');
+            wrapper.className = 'schedule-badges-wrapper';
+
+            existingTag.parentNode.removeChild(existingTag);
+            wrapper.appendChild(existingTag);
+            wrapper.appendChild(badge);
+
+            element.appendChild(wrapper);
+        } else {
+            // Desktop: just add the status badge (type already added on load)
+            element.appendChild(badge);
+        }
     }
 
     // Run immediately
