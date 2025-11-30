@@ -194,6 +194,11 @@
 }
 
 @media (max-width: 768px) {
+    /* Open Mat image focus bottom on mobile */
+    .discipline-card-bg .open-mat-img {
+        object-position: bottom !important;
+    }
+
     /* Show logo text on mobile - same behavior as desktop */
     .logo-text {
         font-size: 1rem;
