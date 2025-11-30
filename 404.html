@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page non trouvée | Davinci Fighting</title>
+    <meta http-equiv="refresh" content="5; url=/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/jpeg" href="assets/images/logo/logo-davinci-fighting.jpg">
+    <style>
+        :root {
+            --red-primary: #B22222;
+            --red-dark: #8B1A1A;
+            --red-glow: rgba(178, 34, 34, 0.4);
+            --black-deep: #0a0a0a;
+            --black-soft: #141414;
+            --gray-800: #252525;
+            --gray-400: #888888;
+            --white: #ffffff;
+            --font-display: 'Bebas Neue', sans-serif;
+            --font-body: 'Barlow', sans-serif;
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--black-deep);
+            color: var(--white);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Fond avec texture subtile */
+        body::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 50%, var(--red-glow) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(178, 34, 34, 0.1) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        /* Lignes diagonales style ring */
+        body::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 200%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 100px,
+                rgba(178, 34, 34, 0.03) 100px,
+                rgba(178, 34, 34, 0.03) 101px
+            );
+            pointer-events: none;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .error-code {
+            font-family: var(--font-display);
+            font-size: clamp(8rem, 25vw, 16rem);
+            line-height: 0.85;
+            letter-spacing: 0.02em;
+            color: var(--white);
+            position: relative;
+            animation: glitch 3s infinite;
+        }
+
+        .error-code::before,
+        .error-code::after {
+            content: '404';
+            position: absolute;
+            left: 0;
+            right: 0;
+            opacity: 0.8;
+        }
+
+        .error-code::before {
+            color: var(--red-primary);
+            animation: glitch-1 2s infinite;
+            clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+        }
+
+        .error-code::after {
+            color: var(--red-dark);
+            animation: glitch-2 2s infinite;
+            clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+        }
+
+        @keyframes glitch {
+            0%, 90%, 100% { transform: translate(0); }
+            92% { transform: translate(-2px, 1px); }
+            94% { transform: translate(2px, -1px); }
+            96% { transform: translate(-1px, 2px); }
+            98% { transform: translate(1px, -2px); }
+        }
+
+        @keyframes glitch-1 {
+            0%, 90%, 100% { transform: translate(0); }
+            92% { transform: translate(3px, 0); }
+            94% { transform: translate(-3px, 0); }
+        }
+
+        @keyframes glitch-2 {
+            0%, 90%, 100% { transform: translate(0); }
+            93% { transform: translate(-3px, 0); }
+            95% { transform: translate(3px, 0); }
+        }
+
+        .knockout-text {
+            font-family: var(--font-display);
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            letter-spacing: 0.3em;
+            color: var(--red-primary);
+            margin-top: 1rem;
+            text-transform: uppercase;
+            animation: fadeIn 0.8s ease 0.3s both;
+        }
+
+        .message {
+            font-size: 1.1rem;
+            color: var(--gray-400);
+            margin-top: 1.5rem;
+            max-width: 400px;
+            line-height: 1.6;
+            animation: fadeIn 0.8s ease 0.5s both;
+        }
+
+        .countdown {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            letter-spacing: 0.1em;
+            color: var(--gray-400);
+            margin-top: 2rem;
+            animation: fadeIn 0.8s ease 0.7s both;
+        }
+
+        .countdown span {
+            color: var(--red-primary);
+            font-size: 1.5rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--white);
+            background: var(--red-primary);
+            border: none;
+            cursor: pointer;
+            clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+            transition: all 0.3s ease;
+            animation: fadeIn 0.8s ease 0.9s both;
+        }
+
+        .btn:hover {
+            background: var(--red-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px var(--red-glow);
+        }
+
+        .btn svg {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover svg {
+            transform: translateX(4px);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Corner accents */
+        .corner {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            border: 2px solid var(--red-primary);
+            opacity: 0.3;
+        }
+
+        .corner-tl { top: 30px; left: 30px; border-right: none; border-bottom: none; }
+        .corner-tr { top: 30px; right: 30px; border-left: none; border-bottom: none; }
+        .corner-bl { bottom: 30px; left: 30px; border-right: none; border-top: none; }
+        .corner-br { bottom: 30px; right: 30px; border-left: none; border-top: none; }
+
+        @media (max-width: 768px) {
+            .corner { width: 40px; height: 40px; }
+            .corner-tl, .corner-tr { top: 20px; }
+            .corner-bl, .corner-br { bottom: 20px; }
+            .corner-tl, .corner-bl { left: 20px; }
+            .corner-tr, .corner-br { right: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="corner corner-tl"></div>
+    <div class="corner corner-tr"></div>
+    <div class="corner corner-bl"></div>
+    <div class="corner corner-br"></div>
+
+    <div class="container">
+        <div class="error-code">404</div>
+        <div class="knockout-text">K.O. Technique</div>
+        <p class="message">Cette page a quitté le ring. Retournez à l'accueil pour reprendre le combat.</p>
+        <div class="countdown">Redirection dans <span id="timer">5</span></div>
+        <a href="/" class="btn">
+            Retour à l'accueil
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+        </a>
+    </div>
+
+    <script>
+        let seconds = 5;
+        const timerEl = document.getElementById('timer');
+
+        const countdown = setInterval(() => {
+            seconds--;
+            timerEl.textContent = seconds;
+
+            if (seconds <= 0) {
+                clearInterval(countdown);
+                window.location.href = '/';
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
