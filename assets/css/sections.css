@@ -891,7 +891,7 @@
     margin-bottom: 1.5rem;
 }
 
-.cta .section-title span {
+.cta .section-title span[data-i18n$="_accent"] {
     color: var(--red-primary);
 }
 

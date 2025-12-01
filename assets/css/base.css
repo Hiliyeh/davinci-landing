@@ -103,7 +103,8 @@ button {
     margin-bottom: 1.5rem;
 }
 
-.section-title span {
+.section-title span[data-i18n$="_accent"],
+.section-title .highlight {
     color: var(--red-primary);
 }
 
