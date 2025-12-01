@@ -103,27 +103,66 @@
                 <nav class="nav" id="nav">
                     <ul class="nav-links">
                         <li class="nav-item">
-                            <a href="#disciplines" class="nav-link">Disciplines</a>
+                            <a href="#disciplines" class="nav-link" data-i18n="nav.disciplines">Disciplines</a>
                             <div class="dropdown">
-                                <div class="dropdown-category">Adulte</div>
+                                <div class="dropdown-category" data-i18n="categories.adult">Adulte</div>
                                 <a href="disciplines/mma-adulte.html" class="dropdown-link">MMA</a>
                                 <a href="disciplines/bjj-adulte.html" class="dropdown-link">BJJ</a>
-                                <a href="disciplines/boxe-anglaise-adulte.html" class="dropdown-link">Boxe Anglaise</a>
+                                <a href="disciplines/boxe-anglaise-adulte.html" class="dropdown-link" data-i18n="disciplines.boxing.name">Boxe Anglaise</a>
                                 <a href="disciplines/kick-boxing-adulte.html" class="dropdown-link">Kick Boxing</a>
-                                <div class="dropdown-category">Junior</div>
+                                <div class="dropdown-category" data-i18n="categories.junior">Junior</div>
                                 <a href="disciplines/mma-junior.html" class="dropdown-link">MMA Junior</a>
                                 <a href="disciplines/bjj-junior.html" class="dropdown-link">BJJ Junior</a>
                                 <a href="disciplines/kick-boxing-junior.html" class="dropdown-link">Kick Boxing Junior</a>
-                                <div class="dropdown-category">Baby</div>
-                                <a href="disciplines/baby-boxe.html" class="dropdown-link">Baby Boxe</a>
-                                <a href="disciplines/kick-boxing-baby.html" class="dropdown-link">Kick Boxing Baby</a>
+                                <div class="dropdown-category" data-i18n="categories.baby">Baby</div>
+                                <a href="disciplines/baby-boxe.html" class="dropdown-link" data-i18n="disciplines.baby_boxe.name">Baby Boxe</a>
+                                <a href="disciplines/kick-boxing-baby.html" class="dropdown-link" data-i18n="disciplines.kickboxing_baby.name">Kick Boxing Baby</a>
                             </div>
                         </li>
-                        <li class="nav-item"><a href="#pricing" class="nav-link">Tarifs</a></li>
-                        <li class="nav-item"><a href="#schedule" class="nav-link">Horaires</a></li>
-                        <li class="nav-item"><a href="https://suppia.be/davincifighting" target="_blank" class="nav-link">Contact</a></li>
+                        <li class="nav-item"><a href="#pricing" class="nav-link" data-i18n="nav.pricing">Tarifs</a></li>
+                        <li class="nav-item"><a href="#schedule" class="nav-link" data-i18n="nav.schedule">Horaires</a></li>
+                        <li class="nav-item"><a href="https://suppia.be/davincifighting" target="_blank" class="nav-link" data-i18n="nav.contact">Contact</a></li>
                     </ul>
+                    <a href="https://suppia.be/davincifighting" target="_blank" class="btn btn-primary">
+                        <span data-i18n="nav.book">Réserver</span>
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <div class="lang-selector-nav">
+                        <button class="lang-btn" data-lang="fr">FR</button>
+                        <button class="lang-btn" data-lang="nl">NL</button>
+                        <button class="lang-btn" data-lang="en">EN</button>
+                    </div>
                 </nav>
+
+                <!-- Language Selector -->
+                <div class="lang-selector">
+                    <!-- Desktop version -->
+                    <div class="lang-selector-desktop">
+                        <button class="lang-btn active" data-lang="fr">FR</button>
+                        <button class="lang-btn" data-lang="nl">NL</button>
+                        <button class="lang-btn" data-lang="en">EN</button>
+                    </div>
+                    <!-- Mobile version -->
+                    <div class="lang-selector-mobile">
+                        <div class="lang-current">
+                            <span class="lang-current-text">FR</span>
+                            <svg class="lang-current-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </div>
+                        <div class="lang-dropdown">
+                            <div class="lang-dropdown-item" data-lang="fr">
+                                <span>Français</span>
+                            </div>
+                            <div class="lang-dropdown-item" data-lang="en">
+                                <span>English</span>
+                            </div>
+                            <div class="lang-dropdown-item" data-lang="nl">
+                                <span>Nederlands</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <button class="menu-toggle" id="menuToggle" aria-label="Menu">
                     <span></span>
@@ -144,42 +183,42 @@
 
         <div class="container">
             <div class="hero-content">
-                <p class="hero-label">Brussels Training Center</p>
+                <p class="hero-label" data-i18n="hero.label">Brussels Training Center</p>
 
                 <h1 class="hero-title">
-                    <span class="line"><span>Bien plus qu'une</span></span>
-                    <span class="line"><span>salle de <span class="highlight">combat</span></span></span>
-                    <span class="line"><span>Une communauté</span></span>
+                    <span class="line"><span data-i18n="hero.title1">Bien plus qu'une</span></span>
+                    <span class="line"><span><span data-i18n="hero.title2">salle de</span> <span class="highlight" data-i18n="hero.title3">combat</span></span></span>
+                    <span class="line"><span data-i18n="hero.title4">Une communauté</span></span>
                 </h1>
 
-                <p class="hero-subtitle">
+                <p class="hero-subtitle" data-i18n="hero.subtitle">
                     L'esprit d'équipe et la solidarité sont notre force. Nous partageons les victoires comme les défaites, et grandissons ensemble.
                 </p>
 
                 <div class="hero-cta">
                     <a href="https://suppia.be/davincifighting" target="_blank" class="btn btn-primary">
-                        Réserver un essai gratuit
+                        <span data-i18n="hero.cta_primary">Réserver un essai gratuit</span>
                         <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M5 12h14M12 5l7 7-7 7"/>
                         </svg>
                     </a>
                     <a href="#disciplines" class="btn btn-outline">
-                        Découvrir nos disciplines
+                        <span data-i18n="hero.cta_secondary">Découvrir nos disciplines</span>
                     </a>
                 </div>
 
                 <div class="hero-stats">
                     <div class="stat">
                         <div class="stat-number">9</div>
-                        <div class="stat-label">Disciplines</div>
+                        <div class="stat-label" data-i18n="hero.stat_disciplines">Disciplines</div>
                     </div>
                     <div class="stat">
                         <div class="stat-number">7/7</div>
-                        <div class="stat-label">Ouvert</div>
+                        <div class="stat-label" data-i18n="hero.stat_open">Ouvert</div>
                     </div>
                     <div class="stat">
                         <div class="stat-number">3+</div>
-                        <div class="stat-label">Tous âges</div>
+                        <div class="stat-label" data-i18n="hero.stat_ages">Tous âges</div>
                     </div>
                 </div>
             </div>
@@ -194,34 +233,34 @@
         <div class="container">
             <div class="disciplines-header reveal">
                 <div>
-                    <p class="section-label">Nos disciplines</p>
-                    <h2 class="section-title">Trouvez votre <span>art</span></h2>
+                    <p class="section-label" data-i18n="disciplines.section_label">Nos disciplines</p>
+                    <h2 class="section-title"><span data-i18n="disciplines.section_title">Trouvez votre</span> <span data-i18n="disciplines.section_title_accent">art</span></h2>
                 </div>
 
                 <div class="disciplines-tabs">
-                    <button class="tab-btn active" data-filter="adulte">Adulte</button>
-                    <button class="tab-btn" data-filter="junior">Junior</button>
-                    <button class="tab-btn" data-filter="baby">Baby</button>
+                    <button class="tab-btn active" data-filter="adulte" data-i18n="disciplines.tab_adult">Adulte</button>
+                    <button class="tab-btn" data-filter="junior" data-i18n="disciplines.tab_junior">Junior</button>
+                    <button class="tab-btn" data-filter="baby" data-i18n="disciplines.tab_baby">Baby</button>
                 </div>
             </div>
 
             <div class="disciplines-grid" id="disciplinesGrid">
                 <!-- MMA Adulte -->
                 <article class="discipline-card reveal reveal-delay-1" data-category="adulte" onclick="window.location.href='disciplines/mma-adulte.html'">
-                    <span class="discipline-tag">Adulte</span>
+                    <span class="discipline-tag" data-i18n="categories.adult">Adulte</span>
                     <div class="discipline-card-bg">
                         <img src="assets/images/disciplines/mma-adulte.jpg" alt="MMA Adulte" loading="lazy">
                     </div>
                     <div class="discipline-card-content">
-                        <h3 class="discipline-name">MMA</h3>
-                        <p class="discipline-desc">Arts martiaux mixtes combinant plusieurs disciplines de combat</p>
+                        <h3 class="discipline-name" data-i18n="disciplines.mma.name">MMA</h3>
+                        <p class="discipline-desc" data-i18n="disciplines.mma.desc">Arts martiaux mixtes combinant plusieurs disciplines de combat</p>
                         <div class="discipline-meta">
                             <span>
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <circle cx="12" cy="12" r="10"/>
                                     <path d="M12 6v6l4 2"/>
                                 </svg>
-                                Lun, Mer, Ven
+                                <span data-i18n="disciplines.mma.schedule">Lun, Mer, Ven</span>
                             </span>
                             <span>49€/mois</span>
                         </div>
@@ -233,20 +272,20 @@
 
                 <!-- BJJ Adulte -->
                 <article class="discipline-card reveal reveal-delay-2" data-category="adulte" onclick="window.location.href='disciplines/bjj-adulte.html'">
-                    <span class="discipline-tag">Adulte</span>
+                    <span class="discipline-tag" data-i18n="categories.adult">Adulte</span>
                     <div class="discipline-card-bg">
                         <img src="assets/images/bjj-new.jpg" alt="BJJ Adulte" loading="lazy" style="object-position: top;">
                     </div>
                     <div class="discipline-card-content">
-                        <h3 class="discipline-name">BJJ</h3>
-                        <p class="discipline-desc">Jiu-Jitsu Brésilien - "Lutte au sol", art du grappling et soumissions</p>
+                        <h3 class="discipline-name" data-i18n="disciplines.bjj.name">BJJ</h3>
+                        <p class="discipline-desc" data-i18n="disciplines.bjj.desc">Jiu-Jitsu Brésilien - "Lutte au sol", art du grappling et soumissions</p>
                         <div class="discipline-meta">
                             <span>
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <circle cx="12" cy="12" r="10"/>
                                     <path d="M12 6v6l4 2"/>
                                 </svg>
-                                Lun, Mer, Ven
+                                <span data-i18n="disciplines.bjj.schedule">Lun, Mer, Ven</span>
                             </span>
                             <span>49€/mois</span>
                         </div>
@@ -258,20 +297,20 @@
 
                 <!-- Boxe Anglaise -->
                 <article class="discipline-card reveal reveal-delay-3" data-category="adulte" onclick="window.location.href='disciplines/boxe-anglaise-adulte.html'">
-                    <span class="discipline-tag">Adulte</span>
+                    <span class="discipline-tag" data-i18n="categories.adult">Adulte</span>
                     <div class="discipline-card-bg">
                         <img src="assets/images/boxe-anglaise-new.jpg" alt="Boxe Anglaise" loading="lazy">
                     </div>
                     <div class="discipline-card-content">
-                        <h3 class="discipline-name">Boxe Anglaise</h3>
-                        <p class="discipline-desc">"Le noble art" - Boxe traditionnelle avec les poings uniquement</p>
+                        <h3 class="discipline-name" data-i18n="disciplines.boxing.name">Boxe Anglaise</h3>
+                        <p class="discipline-desc" data-i18n="disciplines.boxing.desc">"Le noble art" - Boxe traditionnelle avec les poings uniquement</p>
                         <div class="discipline-meta">
                             <span>
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <circle cx="12" cy="12" r="10"/>
                                     <path d="M12 6v6l4 2"/>
                                 </svg>
-                                Lun, Mer, Ven
+                                <span data-i18n="disciplines.boxing.schedule">Lun, Mer, Ven</span>
                             </span>
                             <span>49€/mois</span>
                         </div>
@@ -283,20 +322,20 @@
 
                 <!-- Kick Boxing Adulte -->
                 <article class="discipline-card reveal reveal-delay-4" data-category="adulte" onclick="window.location.href='disciplines/kick-boxing-adulte.html'">
-                    <span class="discipline-tag">Adulte</span>
+                    <span class="discipline-tag" data-i18n="categories.adult">Adulte</span>
                     <div class="discipline-card-bg">
                         <img src="assets/images/disciplines/kick-boxing-adulte.jpg" alt="Kick Boxing" loading="lazy">
                     </div>
                     <div class="discipline-card-content">
-                        <h3 class="discipline-name">Kick Boxing</h3>
-                        <p class="discipline-desc">"Boxe pieds-poings" - Techniques de boxe et coups de pied</p>
+                        <h3 class="discipline-name" data-i18n="disciplines.kickboxing.name">Kick Boxing</h3>
+                        <p class="discipline-desc" data-i18n="disciplines.kickboxing.desc">"Boxe pieds-poings" - Techniques de boxe et coups de pied</p>
                         <div class="discipline-meta">
                             <span>
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <circle cx="12" cy="12" r="10"/>
                                     <path d="M12 6v6l4 2"/>
                                 </svg>
-                                Mar, Jeu, Sam
+                                <span data-i18n="disciplines.kickboxing.schedule">Mar, Jeu, Sam</span>
                             </span>
                             <span>49€/mois</span>
                         </div>
@@ -308,22 +347,22 @@
 
                 <!-- Open Mat Grappling -->
                 <article class="discipline-card reveal reveal-delay-1" data-category="adulte" onclick="window.location.href='disciplines/open-mat-grappling.html'">
-                    <span class="discipline-tag free">Gratuit</span>
+                    <span class="discipline-tag free" data-i18n="categories.free">Gratuit</span>
                     <div class="discipline-card-bg">
                         <img src="assets/images/open-mat-new.jpg" alt="Open Mat Grappling" loading="lazy" class="open-mat-img">
                     </div>
                     <div class="discipline-card-content">
-                        <h3 class="discipline-name">Open Mat Grappling</h3>
-                        <p class="discipline-desc">Entraînement libre de lutte au sol - Ouvert à tous</p>
+                        <h3 class="discipline-name" data-i18n="disciplines.openmat.name">Open Mat Grappling</h3>
+                        <p class="discipline-desc" data-i18n="disciplines.openmat.desc">Entraînement libre de lutte au sol - Ouvert à tous</p>
                         <div class="discipline-meta">
                             <span>
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <circle cx="12" cy="12" r="10"/>
                                     <path d="M12 6v6l4 2"/>
                                 </svg>
-                                Dimanche 12h30
+                                <span data-i18n="disciplines.openmat.schedule">Dimanche 12h30</span>
                             </span>
-                            <span class="price-green">GRATUIT</span>
+                            <span class="price-green" data-i18n="disciplines.openmat.price">GRATUIT</span>
                         </div>
                     </div>
                     <div class="discipline-card-action">
@@ -333,20 +372,20 @@
 
                 <!-- MMA Junior -->
                 <article class="discipline-card reveal reveal-delay-2" data-category="junior" onclick="window.location.href='disciplines/mma-junior.html'">
-                    <span class="discipline-tag tag-junior">8-16 ans</span>
+                    <span class="discipline-tag tag-junior" data-i18n="disciplines.mma_junior.age">8-16 ans</span>
                     <div class="discipline-card-bg">
                         <img src="assets/images/disciplines/mma-junior.jpg" alt="MMA Junior" loading="lazy">
                     </div>
                     <div class="discipline-card-content">
-                        <h3 class="discipline-name">MMA Junior</h3>
-                        <p class="discipline-desc">Arts martiaux mixtes adaptés pour les jeunes de 8 à 16 ans</p>
+                        <h3 class="discipline-name" data-i18n="disciplines.mma_junior.name">MMA Junior</h3>
+                        <p class="discipline-desc" data-i18n="disciplines.mma_junior.desc">Arts martiaux mixtes adaptés pour les jeunes de 8 à 16 ans</p>
                         <div class="discipline-meta">
                             <span>
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <circle cx="12" cy="12" r="10"/>
                                     <path d="M12 6v6l4 2"/>
                                 </svg>
-                                Mer, Sam
+                                <span data-i18n="disciplines.mma_junior.schedule">Mer, Sam</span>
                             </span>
                             <span>40€/mois</span>
                         </div>
@@ -358,20 +397,20 @@
 
                 <!-- BJJ Junior -->
                 <article class="discipline-card reveal reveal-delay-3" data-category="junior" onclick="window.location.href='disciplines/bjj-junior.html'">
-                    <span class="discipline-tag tag-junior">8-16 ans</span>
+                    <span class="discipline-tag tag-junior" data-i18n="disciplines.bjj_junior.age">8-16 ans</span>
                     <div class="discipline-card-bg">
                         <img src="assets/images/disciplines/bjj-junior.jpg" alt="BJJ Junior" loading="lazy">
                     </div>
                     <div class="discipline-card-content">
-                        <h3 class="discipline-name">BJJ Junior</h3>
-                        <p class="discipline-desc">Jiu-Jitsu Brésilien pour les jeunes combattants</p>
+                        <h3 class="discipline-name" data-i18n="disciplines.bjj_junior.name">BJJ Junior</h3>
+                        <p class="discipline-desc" data-i18n="disciplines.bjj_junior.desc">Jiu-Jitsu Brésilien pour les jeunes combattants</p>
                         <div class="discipline-meta">
                             <span>
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <circle cx="12" cy="12" r="10"/>
                                     <path d="M12 6v6l4 2"/>
                                 </svg>
-                                Mer, Sam
+                                <span data-i18n="disciplines.bjj_junior.schedule">Mer, Sam</span>
                             </span>
                             <span>40€/mois</span>
                         </div>
@@ -383,20 +422,20 @@
 
                 <!-- Kick Boxing Junior -->
                 <article class="discipline-card reveal reveal-delay-4" data-category="junior" onclick="window.location.href='disciplines/kick-boxing-junior.html'">
-                    <span class="discipline-tag tag-junior">10-15 ans</span>
+                    <span class="discipline-tag tag-junior" data-i18n="disciplines.kickboxing_junior.age">10-15 ans</span>
                     <div class="discipline-card-bg">
                         <img src="assets/images/disciplines/kick-boxing-junior.jpg" alt="Kick Boxing Junior" loading="lazy">
                     </div>
                     <div class="discipline-card-content">
-                        <h3 class="discipline-name">Kick Boxing Junior</h3>
-                        <p class="discipline-desc">Boxe pieds-poings adaptée pour les 10-15 ans</p>
+                        <h3 class="discipline-name" data-i18n="disciplines.kickboxing_junior.name">Kick Boxing Junior</h3>
+                        <p class="discipline-desc" data-i18n="disciplines.kickboxing_junior.desc">Boxe pieds-poings adaptée pour les 10-15 ans</p>
                         <div class="discipline-meta">
                             <span>
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <circle cx="12" cy="12" r="10"/>
                                     <path d="M12 6v6l4 2"/>
                                 </svg>
-                                Mar, Jeu
+                                <span data-i18n="disciplines.kickboxing_junior.schedule">Mar, Jeu</span>
                             </span>
                             <span>40€/mois</span>
                         </div>
@@ -408,20 +447,20 @@
 
                 <!-- Baby Boxe -->
                 <article class="discipline-card reveal reveal-delay-1" data-category="baby" onclick="window.location.href='disciplines/baby-boxe.html'">
-                    <span class="discipline-tag tag-baby">3-6 ans</span>
+                    <span class="discipline-tag tag-baby" data-i18n="disciplines.baby_boxe.age">3-6 ans</span>
                     <div class="discipline-card-bg">
                         <img src="assets/images/disciplines/baby-boxe.jpg" alt="Baby Boxe" loading="lazy">
                     </div>
                     <div class="discipline-card-content">
-                        <h3 class="discipline-name">Baby Boxe</h3>
-                        <p class="discipline-desc">Initiation ludique à la boxe pour les tout-petits</p>
+                        <h3 class="discipline-name" data-i18n="disciplines.baby_boxe.name">Baby Boxe</h3>
+                        <p class="discipline-desc" data-i18n="disciplines.baby_boxe.desc">Initiation ludique à la boxe pour les tout-petits</p>
                         <div class="discipline-meta">
                             <span>
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <circle cx="12" cy="12" r="10"/>
                                     <path d="M12 6v6l4 2"/>
                                 </svg>
-                                Mer, Sam
+                                <span data-i18n="disciplines.baby_boxe.schedule">Mer, Sam</span>
                             </span>
                             <span>40€/mois</span>
                         </div>
@@ -433,20 +472,20 @@
 
                 <!-- Kick Boxing Baby -->
                 <article class="discipline-card reveal reveal-delay-2" data-category="baby" onclick="window.location.href='disciplines/kick-boxing-baby.html'">
-                    <span class="discipline-tag tag-baby">6-9 ans</span>
+                    <span class="discipline-tag tag-baby" data-i18n="disciplines.kickboxing_baby.age">6-9 ans</span>
                     <div class="discipline-card-bg">
                         <img src="assets/images/disciplines/kick-boxing-baby.jpg" alt="Kick Boxing Baby" loading="lazy">
                     </div>
                     <div class="discipline-card-content">
-                        <h3 class="discipline-name">Kick Boxing Baby</h3>
-                        <p class="discipline-desc">Introduction au kick boxing pour les enfants</p>
+                        <h3 class="discipline-name" data-i18n="disciplines.kickboxing_baby.name">Kick Boxing Baby</h3>
+                        <p class="discipline-desc" data-i18n="disciplines.kickboxing_baby.desc">Introduction au kick boxing pour les enfants</p>
                         <div class="discipline-meta">
                             <span>
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <circle cx="12" cy="12" r="10"/>
                                     <path d="M12 6v6l4 2"/>
                                 </svg>
-                                Mer, Sam
+                                <span data-i18n="disciplines.kickboxing_baby.schedule">Mer, Sam</span>
                             </span>
                             <span>40€/mois</span>
                         </div>
@@ -458,20 +497,20 @@
 
                 <!-- Fitness -->
                 <article class="discipline-card reveal reveal-delay-3" data-category="adulte" onclick="window.location.href='disciplines/musculation.html'">
-                    <span class="discipline-tag">Adulte</span>
+                    <span class="discipline-tag" data-i18n="categories.adult">Adulte</span>
                     <div class="discipline-card-bg">
                         <img src="assets/images/photos/page-fitness-hero.png" alt="Salle de Musculation" loading="lazy">
                     </div>
                     <div class="discipline-card-content">
-                        <h3 class="discipline-name">Musculation</h3>
-                        <p class="discipline-desc">Salle de musculation avec ambiance positive et énergisante</p>
+                        <h3 class="discipline-name" data-i18n="disciplines.fitness.name">Musculation</h3>
+                        <p class="discipline-desc" data-i18n="disciplines.fitness.desc">Salle de musculation avec ambiance positive et énergisante</p>
                         <div class="discipline-meta">
                             <span>
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <circle cx="12" cy="12" r="10"/>
                                     <path d="M12 6v6l4 2"/>
                                 </svg>
-                                6j/7
+                                <span data-i18n="disciplines.fitness.schedule">6j/7</span>
                             </span>
                             <span>20€/mois</span>
                         </div>
@@ -498,9 +537,9 @@
                 </div>
 
                 <div class="about-content">
-                    <p class="section-label reveal">Notre philosophie</p>
-                    <h2 class="section-title reveal">Unis par le <span>combat</span>, liés par le respect</h2>
-                    <p class="about-text reveal">
+                    <p class="section-label reveal" data-i18n="about.section_label">Notre philosophie</p>
+                    <h2 class="section-title reveal"><span data-i18n="about.section_title">Unis par le</span> <span data-i18n="about.section_title_accent">combat</span><span data-i18n="about.section_title2">, liés par le respect</span></h2>
+                    <p class="about-text reveal" data-i18n="about.text">
                         Chez Davinci Fighting, nous croyons que les arts martiaux sont bien plus qu'un simple sport.
                         C'est un chemin de développement personnel où chaque membre de notre communauté grandit
                         ensemble, partageant les victoires comme les défaites.
@@ -517,8 +556,8 @@
                                 </svg>
                             </div>
                             <div class="about-feature-text">
-                                <h4>Tous niveaux</h4>
-                                <p>Débutants et confirmés bienvenus</p>
+                                <h4 data-i18n="about.feature1_title">Tous niveaux</h4>
+                                <p data-i18n="about.feature1_desc">Débutants et confirmés bienvenus</p>
                             </div>
                         </div>
 
@@ -529,8 +568,8 @@
                                 </svg>
                             </div>
                             <div class="about-feature-text">
-                                <h4>Coachs experts</h4>
-                                <p>Encadrement professionnel</p>
+                                <h4 data-i18n="about.feature2_title">Coachs experts</h4>
+                                <p data-i18n="about.feature2_desc">Encadrement professionnel</p>
                             </div>
                         </div>
 
@@ -544,8 +583,8 @@
                                 </svg>
                             </div>
                             <div class="about-feature-text">
-                                <h4>Flexibilité</h4>
-                                <p>Cours 7 jours sur 7</p>
+                                <h4 data-i18n="about.feature3_title">Flexibilité</h4>
+                                <p data-i18n="about.feature3_desc">Cours 7 jours sur 7</p>
                             </div>
                         </div>
 
@@ -556,14 +595,14 @@
                                 </svg>
                             </div>
                             <div class="about-feature-text">
-                                <h4>Communauté</h4>
-                                <p>Une vraie famille de combattants</p>
+                                <h4 data-i18n="about.feature4_title">Communauté</h4>
+                                <p data-i18n="about.feature4_desc">Une vraie famille de combattants</p>
                             </div>
                         </div>
                     </div>
 
                     <a href="https://suppia.be/davincifighting" target="_blank" class="btn btn-primary reveal">
-                        Rejoindre la famille
+                        <span data-i18n="about.cta">Rejoindre la famille</span>
                         <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M5 12h14M12 5l7 7-7 7"/>
                         </svg>
@@ -579,128 +618,128 @@
     <section class="pricing" id="pricing">
         <div class="container">
             <div class="pricing-header reveal">
-                <p class="section-label">Nos tarifs</p>
-                <h2 class="section-title">Investissez en <span>vous</span></h2>
-                <p class="pricing-note">Première séance d'essai gratuite pour toutes les disciplines</p>
+                <p class="section-label" data-i18n="pricing.section_label">Nos tarifs</p>
+                <h2 class="section-title"><span data-i18n="pricing.section_title">Investissez en</span> <span data-i18n="pricing.section_title_accent">vous</span></h2>
+                <p class="pricing-note" data-i18n="pricing.note">Première séance d'essai gratuite pour toutes les disciplines</p>
             </div>
 
             <div class="pricing-tabs reveal">
-                <button class="tab-btn active" data-pricing="adulte">Adulte Combat</button>
-                <button class="tab-btn" data-pricing="junior">Junior & Baby</button>
-                <button class="tab-btn" data-pricing="fitness">Fitness</button>
+                <button class="tab-btn active" data-pricing="adulte" data-i18n="pricing.tab_adult">Adulte Combat</button>
+                <button class="tab-btn" data-pricing="junior" data-i18n="pricing.tab_junior">Junior & Baby</button>
+                <button class="tab-btn" data-pricing="fitness" data-i18n="pricing.tab_fitness">Fitness</button>
             </div>
 
             <div class="pricing-grid" id="pricingGrid">
                 <!-- 1 Mois -->
                 <div class="pricing-card reveal reveal-delay-1">
-                    <p class="pricing-duration">1 Mois</p>
+                    <p class="pricing-duration" data-i18n="pricing.duration_1">1 Mois</p>
                     <div class="pricing-price">
                         <p class="pricing-amount"><sup>€</sup>49</p>
-                        <p class="pricing-period">engagement 1 mois</p>
+                        <p class="pricing-period"><span data-i18n="pricing.commitment">engagement</span> 1 mois</p>
                     </div>
-                    <p class="pricing-monthly">49€/mois</p>
+                    <p class="pricing-monthly">49€<span data-i18n="pricing.per_month">/mois</span></p>
                     <ul class="pricing-features">
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            Accès illimité aux cours
+                            <span data-i18n="pricing.feature_unlimited">Accès illimité aux cours</span>
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            Sans engagement long
+                            <span data-i18n="pricing.feature_no_commit">Sans engagement long</span>
                         </li>
                     </ul>
-                    <a href="https://suppia.be/davincifighting" target="_blank" class="btn btn-outline">S'inscrire</a>
+                    <a href="https://suppia.be/davincifighting" target="_blank" class="btn btn-outline" data-i18n="pricing.cta">S'inscrire</a>
                 </div>
 
                 <!-- 3 Mois -->
                 <div class="pricing-card reveal reveal-delay-2">
-                    <p class="pricing-duration">3 Mois</p>
+                    <p class="pricing-duration" data-i18n="pricing.duration_3">3 Mois</p>
                     <div class="pricing-price">
                         <p class="pricing-amount"><sup>€</sup>135</p>
-                        <p class="pricing-period">engagement 3 mois</p>
+                        <p class="pricing-period"><span data-i18n="pricing.commitment">engagement</span> 3 mois</p>
                     </div>
-                    <p class="pricing-monthly">45€/mois • Économisez 8%</p>
+                    <p class="pricing-monthly">45€<span data-i18n="pricing.per_month">/mois</span> • <span data-i18n="pricing.save">Économisez</span> 8%</p>
                     <ul class="pricing-features">
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            Accès illimité aux cours
+                            <span data-i18n="pricing.feature_unlimited">Accès illimité aux cours</span>
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            Suivi personnalisé
+                            <span data-i18n="pricing.feature_tracking">Suivi personnalisé</span>
                         </li>
                     </ul>
-                    <a href="https://suppia.be/davincifighting" target="_blank" class="btn btn-outline">S'inscrire</a>
+                    <a href="https://suppia.be/davincifighting" target="_blank" class="btn btn-outline" data-i18n="pricing.cta">S'inscrire</a>
                 </div>
 
                 <!-- 6 Mois - Featured -->
                 <div class="pricing-card featured reveal reveal-delay-3">
-                    <p class="pricing-duration">6 Mois</p>
+                    <p class="pricing-duration" data-i18n="pricing.duration_6">6 Mois</p>
                     <div class="pricing-price">
                         <p class="pricing-amount"><sup>€</sup>260</p>
-                        <p class="pricing-period">engagement 6 mois</p>
+                        <p class="pricing-period"><span data-i18n="pricing.commitment">engagement</span> 6 mois</p>
                     </div>
-                    <p class="pricing-monthly">43€/mois • Économisez 12%</p>
+                    <p class="pricing-monthly">43€<span data-i18n="pricing.per_month">/mois</span> • <span data-i18n="pricing.save">Économisez</span> 12%</p>
                     <ul class="pricing-features">
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            Accès illimité aux cours
+                            <span data-i18n="pricing.feature_unlimited">Accès illimité aux cours</span>
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            Suivi personnalisé
+                            <span data-i18n="pricing.feature_tracking">Suivi personnalisé</span>
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            Meilleur rapport qualité/prix
+                            <span data-i18n="pricing.feature_best_value">Meilleur rapport qualité/prix</span>
                         </li>
                     </ul>
-                    <a href="https://suppia.be/davincifighting" target="_blank" class="btn btn-primary">S'inscrire</a>
+                    <a href="https://suppia.be/davincifighting" target="_blank" class="btn btn-primary" data-i18n="pricing.cta">S'inscrire</a>
                 </div>
 
                 <!-- 12 Mois -->
                 <div class="pricing-card reveal reveal-delay-4">
-                    <p class="pricing-duration">12 Mois</p>
+                    <p class="pricing-duration" data-i18n="pricing.duration_12">12 Mois</p>
                     <div class="pricing-price">
                         <p class="pricing-amount"><sup>€</sup>440</p>
-                        <p class="pricing-period">engagement 12 mois</p>
+                        <p class="pricing-period"><span data-i18n="pricing.commitment">engagement</span> 12 mois</p>
                     </div>
-                    <p class="pricing-monthly">37€/mois • Économisez 25%</p>
+                    <p class="pricing-monthly">37€<span data-i18n="pricing.per_month">/mois</span> • <span data-i18n="pricing.save">Économisez</span> 25%</p>
                     <ul class="pricing-features">
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            Accès illimité aux cours
+                            <span data-i18n="pricing.feature_unlimited">Accès illimité aux cours</span>
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            Suivi personnalisé
+                            <span data-i18n="pricing.feature_tracking">Suivi personnalisé</span>
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            Économie maximale
+                            <span data-i18n="pricing.feature_max_savings">Économie maximale</span>
                         </li>
                     </ul>
-                    <a href="https://suppia.be/davincifighting" target="_blank" class="btn btn-outline">S'inscrire</a>
+                    <a href="https://suppia.be/davincifighting" target="_blank" class="btn btn-outline" data-i18n="pricing.cta">S'inscrire</a>
                 </div>
             </div>
         </div>
@@ -713,8 +752,8 @@
         <div class="container">
             <div class="schedule-header reveal">
                 <div>
-                    <p class="section-label">Planning</p>
-                    <h2 class="section-title">Horaires <span>hebdomadaires</span></h2>
+                    <p class="section-label" data-i18n="schedule.section_label">Planning</p>
+                    <h2 class="section-title"><span data-i18n="schedule.section_title">Horaires</span> <span data-i18n="schedule.section_title_accent">hebdomadaires</span></h2>
                 </div>
             </div>
 
@@ -722,20 +761,20 @@
                 <table class="schedule-table">
                     <thead>
                         <tr>
-                            <th>Jour</th>
-                            <th>Matin</th>
-                            <th>Après-midi</th>
-                            <th>Soir</th>
+                            <th data-i18n="schedule.day">Jour</th>
+                            <th data-i18n="schedule.morning">Matin</th>
+                            <th data-i18n="schedule.afternoon">Après-midi</th>
+                            <th data-i18n="schedule.evening">Soir</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><span class="schedule-day">Lundi</span></td>
+                            <td><span class="schedule-day" data-i18n="schedule.monday">Lundi</span></td>
                             <td>—</td>
                             <td>—</td>
                             <td>
                                 <div class="schedule-item">
-                                    <span class="schedule-item-name">Boxe Anglaise</span>
+                                    <span class="schedule-item-name" data-i18n="disciplines.boxing.name">Boxe Anglaise</span>
                                     <span class="schedule-item-time">18h00 - 19h15</span>
                                 </div>
                                 <div class="schedule-item">
@@ -749,17 +788,17 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><span class="schedule-day">Mardi</span></td>
+                            <td><span class="schedule-day" data-i18n="schedule.tuesday">Mardi</span></td>
                             <td>—</td>
                             <td>
                                 <div class="schedule-item junior">
-                                    <span class="schedule-item-name">Kick Boxing Junior</span>
+                                    <span class="schedule-item-name" data-i18n="disciplines.kickboxing_junior.name">Kick Boxing Junior</span>
                                     <span class="schedule-item-time">17h30 - 18h30</span>
                                 </div>
                             </td>
                             <td>
                                 <div class="schedule-item">
-                                    <span class="schedule-item-name">Kick Boxing</span>
+                                    <span class="schedule-item-name" data-i18n="disciplines.kickboxing.name">Kick Boxing</span>
                                     <span class="schedule-item-time">18h30 - 20h00</span>
                                 </div>
                                 <div class="schedule-item">
@@ -769,7 +808,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><span class="schedule-day">Mercredi</span></td>
+                            <td><span class="schedule-day" data-i18n="schedule.wednesday">Mercredi</span></td>
                             <td>
                                 <div class="schedule-item">
                                     <span class="schedule-item-name">MMA Pro</span>
@@ -778,7 +817,7 @@
                             </td>
                             <td>
                                 <div class="schedule-item junior">
-                                    <span class="schedule-item-name">MMA Junior</span>
+                                    <span class="schedule-item-name" data-i18n="disciplines.mma_junior.name">MMA Junior</span>
                                     <span class="schedule-item-time">15h00 - 16h00</span>
                                 </div>
                                 <div class="schedule-item junior">
@@ -786,21 +825,21 @@
                                     <span class="schedule-item-time">16h00 - 17h00</span>
                                 </div>
                                 <div class="schedule-item baby">
-                                    <span class="schedule-item-name">Baby Boxe</span>
+                                    <span class="schedule-item-name" data-i18n="disciplines.baby_boxe.name">Baby Boxe</span>
                                     <span class="schedule-item-time">16h00 - 17h00</span>
                                 </div>
                                 <div class="schedule-item baby">
-                                    <span class="schedule-item-name">Kick Boxing Baby</span>
+                                    <span class="schedule-item-name" data-i18n="disciplines.kickboxing_baby.name">Kick Boxing Baby</span>
                                     <span class="schedule-item-time">17h00 - 18h00</span>
                                 </div>
                                 <div class="schedule-item junior">
-                                    <span class="schedule-item-name">BJJ Junior</span>
+                                    <span class="schedule-item-name" data-i18n="disciplines.bjj_junior.name">BJJ Junior</span>
                                     <span class="schedule-item-time">17h15 - 18h15</span>
                                 </div>
                             </td>
                             <td>
                                 <div class="schedule-item">
-                                    <span class="schedule-item-name">Boxe Anglaise</span>
+                                    <span class="schedule-item-name" data-i18n="disciplines.boxing.name">Boxe Anglaise</span>
                                     <span class="schedule-item-time">18h00 - 19h15</span>
                                 </div>
                                 <div class="schedule-item">
@@ -814,17 +853,17 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><span class="schedule-day">Jeudi</span></td>
+                            <td><span class="schedule-day" data-i18n="schedule.thursday">Jeudi</span></td>
                             <td>—</td>
                             <td>
                                 <div class="schedule-item junior">
-                                    <span class="schedule-item-name">Kick Boxing Junior</span>
+                                    <span class="schedule-item-name" data-i18n="disciplines.kickboxing_junior.name">Kick Boxing Junior</span>
                                     <span class="schedule-item-time">17h30 - 18h30</span>
                                 </div>
                             </td>
                             <td>
                                 <div class="schedule-item">
-                                    <span class="schedule-item-name">Kick Boxing</span>
+                                    <span class="schedule-item-name" data-i18n="disciplines.kickboxing.name">Kick Boxing</span>
                                     <span class="schedule-item-time">18h30 - 20h00</span>
                                 </div>
                                 <div class="schedule-item">
@@ -834,7 +873,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><span class="schedule-day">Vendredi</span></td>
+                            <td><span class="schedule-day" data-i18n="schedule.friday">Vendredi</span></td>
                             <td>
                                 <div class="schedule-item">
                                     <span class="schedule-item-name">MMA Pro</span>
@@ -844,7 +883,7 @@
                             <td>—</td>
                             <td>
                                 <div class="schedule-item">
-                                    <span class="schedule-item-name">Boxe Anglaise</span>
+                                    <span class="schedule-item-name" data-i18n="disciplines.boxing.name">Boxe Anglaise</span>
                                     <span class="schedule-item-time">18h00 - 19h15</span>
                                 </div>
                                 <div class="schedule-item">
@@ -858,10 +897,10 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><span class="schedule-day">Samedi</span></td>
+                            <td><span class="schedule-day" data-i18n="schedule.saturday">Samedi</span></td>
                             <td>
                                 <div class="schedule-item junior">
-                                    <span class="schedule-item-name">MMA Junior</span>
+                                    <span class="schedule-item-name" data-i18n="disciplines.mma_junior.name">MMA Junior</span>
                                     <span class="schedule-item-time">10h00 - 11h00</span>
                                 </div>
                                 <div class="schedule-item junior">
@@ -869,21 +908,21 @@
                                     <span class="schedule-item-time">11h00 - 12h00</span>
                                 </div>
                                 <div class="schedule-item baby">
-                                    <span class="schedule-item-name">Baby Boxe</span>
+                                    <span class="schedule-item-name" data-i18n="disciplines.baby_boxe.name">Baby Boxe</span>
                                     <span class="schedule-item-time">11h00 - 12h00</span>
                                 </div>
                                 <div class="schedule-item baby">
-                                    <span class="schedule-item-name">Kick Boxing Baby</span>
+                                    <span class="schedule-item-name" data-i18n="disciplines.kickboxing_baby.name">Kick Boxing Baby</span>
                                     <span class="schedule-item-time">12h00 - 13h00</span>
                                 </div>
                                 <div class="schedule-item junior">
-                                    <span class="schedule-item-name">BJJ Junior</span>
+                                    <span class="schedule-item-name" data-i18n="disciplines.bjj_junior.name">BJJ Junior</span>
                                     <span class="schedule-item-time">12h15 - 13h15</span>
                                 </div>
                             </td>
                             <td>
                                 <div class="schedule-item">
-                                    <span class="schedule-item-name">Kick Boxing</span>
+                                    <span class="schedule-item-name" data-i18n="disciplines.kickboxing.name">Kick Boxing</span>
                                     <span class="schedule-item-time">13h00 - 14h00</span>
                                 </div>
                                 <div class="schedule-item">
@@ -898,11 +937,11 @@
                             <td>—</td>
                         </tr>
                         <tr>
-                            <td><span class="schedule-day">Dimanche</span></td>
+                            <td><span class="schedule-day" data-i18n="schedule.sunday">Dimanche</span></td>
                             <td>—</td>
                             <td>
                                 <div class="schedule-item free">
-                                    <span class="schedule-item-name">Open Mat Grappling</span>
+                                    <span class="schedule-item-name" data-i18n="disciplines.openmat.name">Open Mat Grappling</span>
                                     <span class="schedule-item-time">12h30 - 14h00</span>
                                 </div>
                             </td>
@@ -919,8 +958,8 @@
                     <div class="schedule-day-card">
                         <div class="schedule-day-header">
                             <div class="schedule-day-meta">
-                                <span class="schedule-day-title">Lundi</span>
-                                <span class="schedule-day-count">3 cours</span>
+                                <span class="schedule-day-title" data-i18n="schedule.monday">Lundi</span>
+                                <span class="schedule-day-count">3 <span data-i18n="schedule.classes">cours</span></span>
                             </div>
                             <div class="schedule-day-toggle">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -932,24 +971,24 @@
                             <div class="schedule-day-inner">
                                 <div class="schedule-mobile-item">
                                     <div class="schedule-mobile-info">
-                                        <div class="schedule-mobile-name">Boxe Anglaise</div>
+                                        <div class="schedule-mobile-name" data-i18n="disciplines.boxing.name">Boxe Anglaise</div>
                                         <div class="schedule-mobile-time">18h00 - 19h15</div>
                                     </div>
-                                    <span class="schedule-mobile-tag">Adulte</span>
+                                    <span class="schedule-mobile-tag" data-i18n="categories.adult">Adulte</span>
                                 </div>
                                 <div class="schedule-mobile-item">
                                     <div class="schedule-mobile-info">
                                         <div class="schedule-mobile-name">MMA</div>
                                         <div class="schedule-mobile-time">19h15 - 20h15</div>
                                     </div>
-                                    <span class="schedule-mobile-tag">Adulte</span>
+                                    <span class="schedule-mobile-tag" data-i18n="categories.adult">Adulte</span>
                                 </div>
                                 <div class="schedule-mobile-item">
                                     <div class="schedule-mobile-info">
                                         <div class="schedule-mobile-name">BJJ</div>
                                         <div class="schedule-mobile-time">20h15 - 21h45</div>
                                     </div>
-                                    <span class="schedule-mobile-tag">Adulte</span>
+                                    <span class="schedule-mobile-tag" data-i18n="categories.adult">Adulte</span>
                                 </div>
                             </div>
                         </div>
@@ -959,8 +998,8 @@
                     <div class="schedule-day-card">
                         <div class="schedule-day-header">
                             <div class="schedule-day-meta">
-                                <span class="schedule-day-title">Mardi</span>
-                                <span class="schedule-day-count">3 cours</span>
+                                <span class="schedule-day-title" data-i18n="schedule.tuesday">Mardi</span>
+                                <span class="schedule-day-count">3 <span data-i18n="schedule.classes">cours</span></span>
                             </div>
                             <div class="schedule-day-toggle">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -972,24 +1011,24 @@
                             <div class="schedule-day-inner">
                                 <div class="schedule-mobile-item junior">
                                     <div class="schedule-mobile-info">
-                                        <div class="schedule-mobile-name">Kick Boxing Junior</div>
+                                        <div class="schedule-mobile-name" data-i18n="disciplines.kickboxing_junior.name">Kick Boxing Junior</div>
                                         <div class="schedule-mobile-time">17h30 - 18h30</div>
                                     </div>
-                                    <span class="schedule-mobile-tag">Junior</span>
+                                    <span class="schedule-mobile-tag" data-i18n="categories.junior">Junior</span>
                                 </div>
                                 <div class="schedule-mobile-item">
                                     <div class="schedule-mobile-info">
-                                        <div class="schedule-mobile-name">Kick Boxing</div>
+                                        <div class="schedule-mobile-name" data-i18n="disciplines.kickboxing.name">Kick Boxing</div>
                                         <div class="schedule-mobile-time">18h30 - 20h00</div>
                                     </div>
-                                    <span class="schedule-mobile-tag">Adulte</span>
+                                    <span class="schedule-mobile-tag" data-i18n="categories.adult">Adulte</span>
                                 </div>
                                 <div class="schedule-mobile-item">
                                     <div class="schedule-mobile-info">
                                         <div class="schedule-mobile-name">Kick Boxing Pro</div>
                                         <div class="schedule-mobile-time">20h00 - 21h30</div>
                                     </div>
-                                    <span class="schedule-mobile-tag">Pro</span>
+                                    <span class="schedule-mobile-tag" data-i18n="categories.pro">Pro</span>
                                 </div>
                             </div>
                         </div>
@@ -999,8 +1038,8 @@
                     <div class="schedule-day-card active">
                         <div class="schedule-day-header">
                             <div class="schedule-day-meta">
-                                <span class="schedule-day-title">Mercredi</span>
-                                <span class="schedule-day-count">9 cours</span>
+                                <span class="schedule-day-title" data-i18n="schedule.wednesday">Mercredi</span>
+                                <span class="schedule-day-count">9 <span data-i18n="schedule.classes">cours</span></span>
                             </div>
                             <div class="schedule-day-toggle">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1015,63 +1054,63 @@
                                         <div class="schedule-mobile-name">MMA Pro</div>
                                         <div class="schedule-mobile-time">11h00 - 13h00</div>
                                     </div>
-                                    <span class="schedule-mobile-tag">Pro</span>
+                                    <span class="schedule-mobile-tag" data-i18n="categories.pro">Pro</span>
                                 </div>
                                 <div class="schedule-mobile-item junior">
                                     <div class="schedule-mobile-info">
-                                        <div class="schedule-mobile-name">MMA Junior</div>
+                                        <div class="schedule-mobile-name" data-i18n="disciplines.mma_junior.name">MMA Junior</div>
                                         <div class="schedule-mobile-time">15h00 - 16h00</div>
                                     </div>
-                                    <span class="schedule-mobile-tag">Junior</span>
+                                    <span class="schedule-mobile-tag" data-i18n="categories.junior">Junior</span>
                                 </div>
                                 <div class="schedule-mobile-item junior">
                                     <div class="schedule-mobile-info">
                                         <div class="schedule-mobile-name">Boxe Junior</div>
                                         <div class="schedule-mobile-time">16h00 - 17h00</div>
                                     </div>
-                                    <span class="schedule-mobile-tag">Junior</span>
+                                    <span class="schedule-mobile-tag" data-i18n="categories.junior">Junior</span>
                                 </div>
                                 <div class="schedule-mobile-item baby">
                                     <div class="schedule-mobile-info">
-                                        <div class="schedule-mobile-name">Baby Boxe</div>
+                                        <div class="schedule-mobile-name" data-i18n="disciplines.baby_boxe.name">Baby Boxe</div>
                                         <div class="schedule-mobile-time">16h00 - 17h00</div>
                                     </div>
-                                    <span class="schedule-mobile-tag">Baby</span>
+                                    <span class="schedule-mobile-tag" data-i18n="categories.baby">Baby</span>
                                 </div>
                                 <div class="schedule-mobile-item baby">
                                     <div class="schedule-mobile-info">
-                                        <div class="schedule-mobile-name">Kick Boxing Baby</div>
+                                        <div class="schedule-mobile-name" data-i18n="disciplines.kickboxing_baby.name">Kick Boxing Baby</div>
                                         <div class="schedule-mobile-time">17h00 - 18h00</div>
                                     </div>
-                                    <span class="schedule-mobile-tag">Baby</span>
+                                    <span class="schedule-mobile-tag" data-i18n="categories.baby">Baby</span>
                                 </div>
                                 <div class="schedule-mobile-item junior">
                                     <div class="schedule-mobile-info">
-                                        <div class="schedule-mobile-name">BJJ Junior</div>
+                                        <div class="schedule-mobile-name" data-i18n="disciplines.bjj_junior.name">BJJ Junior</div>
                                         <div class="schedule-mobile-time">17h15 - 18h15</div>
                                     </div>
-                                    <span class="schedule-mobile-tag">Junior</span>
+                                    <span class="schedule-mobile-tag" data-i18n="categories.junior">Junior</span>
                                 </div>
                                 <div class="schedule-mobile-item">
                                     <div class="schedule-mobile-info">
-                                        <div class="schedule-mobile-name">Boxe Anglaise</div>
+                                        <div class="schedule-mobile-name" data-i18n="disciplines.boxing.name">Boxe Anglaise</div>
                                         <div class="schedule-mobile-time">18h00 - 19h15</div>
                                     </div>
-                                    <span class="schedule-mobile-tag">Adulte</span>
+                                    <span class="schedule-mobile-tag" data-i18n="categories.adult">Adulte</span>
                                 </div>
                                 <div class="schedule-mobile-item">
                                     <div class="schedule-mobile-info">
                                         <div class="schedule-mobile-name">MMA</div>
                                         <div class="schedule-mobile-time">19h15 - 20h15</div>
                                     </div>
-                                    <span class="schedule-mobile-tag">Adulte</span>
+                                    <span class="schedule-mobile-tag" data-i18n="categories.adult">Adulte</span>
                                 </div>
                                 <div class="schedule-mobile-item">
                                     <div class="schedule-mobile-info">
                                         <div class="schedule-mobile-name">BJJ</div>
                                         <div class="schedule-mobile-time">20h15 - 21h45</div>
                                     </div>
-                                    <span class="schedule-mobile-tag">Adulte</span>
+                                    <span class="schedule-mobile-tag" data-i18n="categories.adult">Adulte</span>
                                 </div>
                             </div>
                         </div>
@@ -1081,8 +1120,8 @@
                     <div class="schedule-day-card">
                         <div class="schedule-day-header">
                             <div class="schedule-day-meta">
-                                <span class="schedule-day-title">Jeudi</span>
-                                <span class="schedule-day-count">3 cours</span>
+                                <span class="schedule-day-title" data-i18n="schedule.thursday">Jeudi</span>
+                                <span class="schedule-day-count">3 <span data-i18n="schedule.classes">cours</span></span>
                             </div>
                             <div class="schedule-day-toggle">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1094,24 +1133,24 @@
                             <div class="schedule-day-inner">
                                 <div class="schedule-mobile-item junior">
                                     <div class="schedule-mobile-info">
-                                        <div class="schedule-mobile-name">Kick Boxing Junior</div>
+                                        <div class="schedule-mobile-name" data-i18n="disciplines.kickboxing_junior.name">Kick Boxing Junior</div>
                                         <div class="schedule-mobile-time">17h30 - 18h30</div>
                                     </div>
-                                    <span class="schedule-mobile-tag">Junior</span>
+                                    <span class="schedule-mobile-tag" data-i18n="categories.junior">Junior</span>
                                 </div>
                                 <div class="schedule-mobile-item">
                                     <div class="schedule-mobile-info">
-                                        <div class="schedule-mobile-name">Kick Boxing</div>
+                                        <div class="schedule-mobile-name" data-i18n="disciplines.kickboxing.name">Kick Boxing</div>
                                         <div class="schedule-mobile-time">18h30 - 20h00</div>
                                     </div>
-                                    <span class="schedule-mobile-tag">Adulte</span>
+                                    <span class="schedule-mobile-tag" data-i18n="categories.adult">Adulte</span>
                                 </div>
                                 <div class="schedule-mobile-item">
                                     <div class="schedule-mobile-info">
                                         <div class="schedule-mobile-name">Kick Boxing Pro</div>
                                         <div class="schedule-mobile-time">20h00 - 21h30</div>
                                     </div>
-                                    <span class="schedule-mobile-tag">Pro</span>
+                                    <span class="schedule-mobile-tag" data-i18n="categories.pro">Pro</span>
                                 </div>
                             </div>
                         </div>
@@ -1121,8 +1160,8 @@
                     <div class="schedule-day-card">
                         <div class="schedule-day-header">
                             <div class="schedule-day-meta">
-                                <span class="schedule-day-title">Vendredi</span>
-                                <span class="schedule-day-count">4 cours</span>
+                                <span class="schedule-day-title" data-i18n="schedule.friday">Vendredi</span>
+                                <span class="schedule-day-count">4 <span data-i18n="schedule.classes">cours</span></span>
                             </div>
                             <div class="schedule-day-toggle">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1137,28 +1176,28 @@
                                         <div class="schedule-mobile-name">MMA Pro</div>
                                         <div class="schedule-mobile-time">11h00 - 13h00</div>
                                     </div>
-                                    <span class="schedule-mobile-tag">Pro</span>
+                                    <span class="schedule-mobile-tag" data-i18n="categories.pro">Pro</span>
                                 </div>
                                 <div class="schedule-mobile-item">
                                     <div class="schedule-mobile-info">
-                                        <div class="schedule-mobile-name">Boxe Anglaise</div>
+                                        <div class="schedule-mobile-name" data-i18n="disciplines.boxing.name">Boxe Anglaise</div>
                                         <div class="schedule-mobile-time">18h00 - 19h15</div>
                                     </div>
-                                    <span class="schedule-mobile-tag">Adulte</span>
+                                    <span class="schedule-mobile-tag" data-i18n="categories.adult">Adulte</span>
                                 </div>
                                 <div class="schedule-mobile-item">
                                     <div class="schedule-mobile-info">
                                         <div class="schedule-mobile-name">MMA</div>
                                         <div class="schedule-mobile-time">19h15 - 20h15</div>
                                     </div>
-                                    <span class="schedule-mobile-tag">Adulte</span>
+                                    <span class="schedule-mobile-tag" data-i18n="categories.adult">Adulte</span>
                                 </div>
                                 <div class="schedule-mobile-item">
                                     <div class="schedule-mobile-info">
                                         <div class="schedule-mobile-name">BJJ</div>
                                         <div class="schedule-mobile-time">20h15 - 21h45</div>
                                     </div>
-                                    <span class="schedule-mobile-tag">Adulte</span>
+                                    <span class="schedule-mobile-tag" data-i18n="categories.adult">Adulte</span>
                                 </div>
                             </div>
                         </div>
@@ -1168,8 +1207,8 @@
                     <div class="schedule-day-card">
                         <div class="schedule-day-header">
                             <div class="schedule-day-meta">
-                                <span class="schedule-day-title">Samedi</span>
-                                <span class="schedule-day-count">8 cours</span>
+                                <span class="schedule-day-title" data-i18n="schedule.saturday">Samedi</span>
+                                <span class="schedule-day-count">8 <span data-i18n="schedule.classes">cours</span></span>
                             </div>
                             <div class="schedule-day-toggle">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1181,59 +1220,59 @@
                             <div class="schedule-day-inner">
                                 <div class="schedule-mobile-item junior">
                                     <div class="schedule-mobile-info">
-                                        <div class="schedule-mobile-name">MMA Junior</div>
+                                        <div class="schedule-mobile-name" data-i18n="disciplines.mma_junior.name">MMA Junior</div>
                                         <div class="schedule-mobile-time">10h00 - 11h00</div>
                                     </div>
-                                    <span class="schedule-mobile-tag">Junior</span>
+                                    <span class="schedule-mobile-tag" data-i18n="categories.junior">Junior</span>
                                 </div>
                                 <div class="schedule-mobile-item junior">
                                     <div class="schedule-mobile-info">
                                         <div class="schedule-mobile-name">Boxe Junior</div>
                                         <div class="schedule-mobile-time">11h00 - 12h00</div>
                                     </div>
-                                    <span class="schedule-mobile-tag">Junior</span>
+                                    <span class="schedule-mobile-tag" data-i18n="categories.junior">Junior</span>
                                 </div>
                                 <div class="schedule-mobile-item baby">
                                     <div class="schedule-mobile-info">
-                                        <div class="schedule-mobile-name">Baby Boxe</div>
+                                        <div class="schedule-mobile-name" data-i18n="disciplines.baby_boxe.name">Baby Boxe</div>
                                         <div class="schedule-mobile-time">11h00 - 12h00</div>
                                     </div>
-                                    <span class="schedule-mobile-tag">Baby</span>
+                                    <span class="schedule-mobile-tag" data-i18n="categories.baby">Baby</span>
                                 </div>
                                 <div class="schedule-mobile-item baby">
                                     <div class="schedule-mobile-info">
-                                        <div class="schedule-mobile-name">Kick Boxing Baby</div>
+                                        <div class="schedule-mobile-name" data-i18n="disciplines.kickboxing_baby.name">Kick Boxing Baby</div>
                                         <div class="schedule-mobile-time">12h00 - 13h00</div>
                                     </div>
-                                    <span class="schedule-mobile-tag">Baby</span>
+                                    <span class="schedule-mobile-tag" data-i18n="categories.baby">Baby</span>
                                 </div>
                                 <div class="schedule-mobile-item junior">
                                     <div class="schedule-mobile-info">
-                                        <div class="schedule-mobile-name">BJJ Junior</div>
+                                        <div class="schedule-mobile-name" data-i18n="disciplines.bjj_junior.name">BJJ Junior</div>
                                         <div class="schedule-mobile-time">12h15 - 13h15</div>
                                     </div>
-                                    <span class="schedule-mobile-tag">Junior</span>
+                                    <span class="schedule-mobile-tag" data-i18n="categories.junior">Junior</span>
                                 </div>
                                 <div class="schedule-mobile-item">
                                     <div class="schedule-mobile-info">
-                                        <div class="schedule-mobile-name">Kick Boxing</div>
+                                        <div class="schedule-mobile-name" data-i18n="disciplines.kickboxing.name">Kick Boxing</div>
                                         <div class="schedule-mobile-time">13h00 - 14h00</div>
                                     </div>
-                                    <span class="schedule-mobile-tag">Adulte</span>
+                                    <span class="schedule-mobile-tag" data-i18n="categories.adult">Adulte</span>
                                 </div>
                                 <div class="schedule-mobile-item">
                                     <div class="schedule-mobile-info">
                                         <div class="schedule-mobile-name">Kick Boxing Pro</div>
                                         <div class="schedule-mobile-time">14h00 - 15h00</div>
                                     </div>
-                                    <span class="schedule-mobile-tag">Pro</span>
+                                    <span class="schedule-mobile-tag" data-i18n="categories.pro">Pro</span>
                                 </div>
                                 <div class="schedule-mobile-item">
                                     <div class="schedule-mobile-info">
                                         <div class="schedule-mobile-name">MMA Pro</div>
                                         <div class="schedule-mobile-time">15h00 - 16h00</div>
                                     </div>
-                                    <span class="schedule-mobile-tag">Pro</span>
+                                    <span class="schedule-mobile-tag" data-i18n="categories.pro">Pro</span>
                                 </div>
                             </div>
                         </div>
@@ -1243,8 +1282,8 @@
                     <div class="schedule-day-card">
                         <div class="schedule-day-header">
                             <div class="schedule-day-meta">
-                                <span class="schedule-day-title">Dimanche</span>
-                                <span class="schedule-day-count">1 cours</span>
+                                <span class="schedule-day-title" data-i18n="schedule.sunday">Dimanche</span>
+                                <span class="schedule-day-count">1 <span data-i18n="schedule.classes">cours</span></span>
                             </div>
                             <div class="schedule-day-toggle">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1256,10 +1295,10 @@
                             <div class="schedule-day-inner">
                                 <div class="schedule-mobile-item free">
                                     <div class="schedule-mobile-info">
-                                        <div class="schedule-mobile-name">Open Mat Grappling</div>
+                                        <div class="schedule-mobile-name" data-i18n="disciplines.openmat.name">Open Mat Grappling</div>
                                         <div class="schedule-mobile-time">12h30 - 14h00</div>
                                     </div>
-                                    <span class="schedule-mobile-tag free">Gratuit</span>
+                                    <span class="schedule-mobile-tag free" data-i18n="categories.free">Gratuit</span>
                                 </div>
                             </div>
                         </div>
@@ -1270,19 +1309,19 @@
             <div class="schedule-legend reveal">
                 <div class="legend-item">
                     <div class="legend-color adulte"></div>
-                    <span>Adulte</span>
+                    <span data-i18n="schedule.legend_adult">Adulte</span>
                 </div>
                 <div class="legend-item">
                     <div class="legend-color junior"></div>
-                    <span>Junior (8-16 ans)</span>
+                    <span data-i18n="schedule.legend_junior">Junior (8-16 ans)</span>
                 </div>
                 <div class="legend-item">
                     <div class="legend-color baby"></div>
-                    <span>Baby (3-9 ans)</span>
+                    <span data-i18n="schedule.legend_baby">Baby (3-9 ans)</span>
                 </div>
                 <div class="legend-item">
                     <div class="legend-color free"></div>
-                    <span>Gratuit</span>
+                    <span data-i18n="schedule.legend_free">Gratuit</span>
                 </div>
             </div>
         </div>
@@ -1294,15 +1333,15 @@
     <section class="cta">
         <div class="container">
             <div class="cta-content reveal">
-                <p class="section-label">Prêt à commencer ?</p>
-                <h2 class="section-title">Votre première séance est <span class="text-white">gratuite</span></h2>
-                <p class="cta-text">
+                <p class="section-label" data-i18n="cta.label">Prêt à commencer ?</p>
+                <h2 class="section-title"><span data-i18n="cta.title">Votre première séance est</span> <span class="text-white" data-i18n="cta.title_accent">gratuite</span></h2>
+                <p class="cta-text" data-i18n="cta.text">
                     Venez découvrir notre salle, rencontrer nos coachs et essayer la discipline de votre choix.
                     Sans engagement, sans pression.
                 </p>
                 <div class="cta-buttons">
                     <a href="https://suppia.be/davincifighting" target="_blank" class="btn btn-primary">
-                        Réserver maintenant
+                        <span data-i18n="cta.btn_primary">Réserver maintenant</span>
                         <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M5 12h14M12 5l7 7-7 7"/>
                         </svg>
@@ -1325,7 +1364,7 @@
         <div class="container">
             <div class="contact-grid">
                 <div class="contact-info reveal">
-                    <h3>Nous trouver</h3>
+                    <h3 data-i18n="contact.title">Nous trouver</h3>
 
                     <div class="contact-item">
                         <div class="contact-item-icon">
@@ -1335,7 +1374,7 @@
                             </svg>
                         </div>
                         <div class="contact-item-text">
-                            <h4>Adresse</h4>
+                            <h4 data-i18n="contact.address_title">Adresse</h4>
                             <p>Chaussée de Haecht 1133<br>1140 Evere, Bruxelles</p>
                         </div>
                     </div>
@@ -1347,7 +1386,7 @@
                             </svg>
                         </div>
                         <div class="contact-item-text">
-                            <h4>Téléphone</h4>
+                            <h4 data-i18n="contact.phone_title">Téléphone</h4>
                             <a href="tel:+32471691694">0471 69 16 94</a>
                         </div>
                     </div>
@@ -1360,7 +1399,7 @@
                             </svg>
                         </div>
                         <div class="contact-item-text">
-                            <h4>Email</h4>
+                            <h4 data-i18n="contact.email_title">Email</h4>
                             <a href="mailto:Davincifighting@gmail.com">Davincifighting@gmail.com</a>
                         </div>
                     </div>
@@ -1410,11 +1449,11 @@
                 </a>
 
                 <nav class="footer-nav">
-                    <a href="#disciplines">Disciplines</a>
-                    <a href="#pricing">Tarifs</a>
-                    <a href="#schedule">Horaires</a>
-                    <a href="https://suppia.be/davincifighting" target="_blank">Contact</a>
-                    <a href="https://suppia.be/davincifighting" target="_blank">Réserver</a>
+                    <a href="#disciplines" data-i18n="nav.disciplines">Disciplines</a>
+                    <a href="#pricing" data-i18n="nav.pricing">Tarifs</a>
+                    <a href="#schedule" data-i18n="nav.schedule">Horaires</a>
+                    <a href="https://suppia.be/davincifighting" target="_blank" data-i18n="nav.contact">Contact</a>
+                    <a href="https://suppia.be/davincifighting" target="_blank" data-i18n="nav.book">Réserver</a>
                 </nav>
             </div>
 
@@ -1424,14 +1463,14 @@
                 </p>
 
                 <div class="footer-legal">
-                    <a href="legal/mentions-legales.html">Mentions légales</a>
-                    <a href="legal/politique-confidentialite.html">Politique de confidentialité</a>
+                    <a href="legal/mentions-legales.html" data-i18n="footer.legal">Mentions légales</a>
+                    <a href="legal/politique-confidentialite.html" data-i18n="footer.privacy">Politique de confidentialité</a>
                 </div>
             </div>
 
             <div class="footer-credit">
                 <p class="footer-credit-text">
-                    Conçu par
+                    <span data-i18n="footer.designed_by">Conçu par</span>
                     <a href="https://www.linkedin.com/in/hiliyeh-bashir/" target="_blank" class="footer-credit-name">Hiliyeh Bashir</a>
                 </p>
             </div>
@@ -1441,6 +1480,7 @@
     <!-- =============================================
          JAVASCRIPT
     ============================================= -->
+    <script src="assets/js/translations.js"></script>
     <script type="module" src="assets/js/main.js"></script>
 </body>
 </html>

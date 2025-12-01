@@ -22,6 +22,63 @@
         -webkit-backdrop-filter: none;
     }
 
+    /* Mobile: Hide header language selector completely */
+    .lang-selector {
+        display: none !important;
+    }
+
+    /* Mobile: Show language buttons inside menu (like desktop style) */
+    .lang-selector-nav {
+        display: none !important;
+    }
+
+    .nav.active .lang-selector-nav {
+        display: flex !important;
+        justify-content: center;
+        gap: 4px;
+        margin: 2rem 1.5rem 0;
+        padding: 1.5rem 0 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(20, 20, 20, 0.8);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 8px;
+        padding: 4px;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2rem;
+    }
+
+    .nav .lang-selector-nav .lang-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 50px;
+        height: 36px;
+        padding: 0 14px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        color: var(--gray-400);
+        background: transparent;
+        border: none;
+        border-radius: 6px;
+        transition: all 0.25s ease;
+    }
+
+    .nav .lang-selector-nav .lang-btn:hover {
+        color: var(--white);
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+    .nav .lang-selector-nav .lang-btn.active {
+        color: var(--white);
+        background: var(--red-primary);
+        box-shadow: 0 2px 12px rgba(178, 34, 34, 0.4);
+    }
+
     /* ========== MODERN MOBILE MENU 2024 ========== */
     .nav {
         position: fixed;

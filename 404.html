@@ -42,7 +42,6 @@
             position: relative;
         }
 
-        /* Fond avec texture subtile */
         body::before {
             content: '';
             position: absolute;
@@ -53,7 +52,6 @@
             pointer-events: none;
         }
 
-        /* Lignes diagonales style ring */
         body::after {
             content: '';
             position: absolute;
@@ -69,6 +67,51 @@
                 rgba(178, 34, 34, 0.03) 101px
             );
             pointer-events: none;
+        }
+
+        /* Language Selector */
+        .lang-selector {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+
+        .lang-selector-desktop {
+            display: flex;
+            gap: 0.25rem;
+            background: rgba(37, 37, 37, 0.6);
+            padding: 0.25rem;
+            border-radius: 6px;
+            border: 1px solid var(--gray-800);
+        }
+
+        .lang-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem 0.75rem;
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--gray-400);
+            background: transparent;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn:hover {
+            color: var(--white);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .lang-btn.active {
+            color: var(--white);
+            background: var(--red-primary);
         }
 
         .container {
@@ -172,6 +215,7 @@
             font-size: 1.1rem;
             letter-spacing: 0.15em;
             text-transform: uppercase;
+            text-decoration: none;
             color: var(--white);
             background: var(--red-primary);
             border: none;
@@ -202,7 +246,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Corner accents */
         .corner {
             position: fixed;
             width: 60px;
@@ -226,6 +269,15 @@
     </style>
 </head>
 <body>
+    <!-- Language Selector -->
+    <div class="lang-selector">
+        <div class="lang-selector-desktop">
+            <button class="lang-btn active" data-lang="fr">FR</button>
+            <button class="lang-btn" data-lang="nl">NL</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+    </div>
+
     <div class="corner corner-tl"></div>
     <div class="corner corner-tr"></div>
     <div class="corner corner-bl"></div>
@@ -233,10 +285,10 @@
 
     <div class="container">
         <div class="error-code">404</div>
-        <div class="knockout-text">K.O. Technique</div>
-        <p class="message">Cette page a quitté le ring. Retournez à l'accueil pour reprendre le combat.</p>
-        <div class="countdown">Redirection dans <span id="timer">5</span></div>
-        <a href="/" class="btn">
+        <div class="knockout-text" data-i18n="error404.knockout">K.O. Technique</div>
+        <p class="message" data-i18n="error404.message">Cette page a quitté le ring. Retournez à l'accueil pour reprendre le combat.</p>
+        <div class="countdown"><span data-i18n="error404.redirect">Redirection dans</span> <span id="timer">5</span></div>
+        <a href="/" class="btn" data-i18n="error404.btn">
             Retour à l'accueil
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -244,6 +296,8 @@
         </a>
     </div>
 
+    <script src="assets/js/translations.js"></script>
+    <script src="assets/js/i18n-standalone.js"></script>
     <script>
         let seconds = 5;
         const timerEl = document.getElementById('timer');

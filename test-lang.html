@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Language Detection</title>
+    <style>
+        body { font-family: Arial; padding: 40px; background: #1a1a1a; color: #fff; }
+        .box { background: #333; padding: 20px; margin: 10px 0; border-radius: 8px; }
+        .label { color: #888; font-size: 14px; }
+        .value { color: #B22222; font-size: 24px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Test Détection Langue</h1>
+
+    <div class="box">
+        <div class="label">navigator.language</div>
+        <div class="value" id="nav-lang"></div>
+    </div>
+
+    <div class="box">
+        <div class="label">navigator.languages</div>
+        <div class="value" id="nav-langs"></div>
+    </div>
+
+    <div class="box">
+        <div class="label">localStorage (davinci-lang)</div>
+        <div class="value" id="local"></div>
+    </div>
+
+    <div class="box">
+        <div class="label">Langue détectée par le système</div>
+        <div class="value" id="detected"></div>
+    </div>
+
+    <script src="assets/js/translations.js"></script>
+    <script src="assets/js/i18n-standalone.js"></script>
+    <script>
+        document.getElementById('nav-lang').textContent = navigator.language;
+        document.getElementById('nav-langs').textContent = navigator.languages?.join(', ') || 'N/A';
+        document.getElementById('local').textContent = localStorage.getItem('davinci-lang') || '(aucun)';
+        document.getElementById('detected').textContent = window.i18n?.currentLang || 'N/A';
+    </script>
+</body>
+</html>
